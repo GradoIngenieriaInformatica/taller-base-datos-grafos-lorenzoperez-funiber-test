@@ -1,2 +1,4 @@
-MATCH (p:Persona)-[:VIVE_EN]->(c:Ciudad)
-RETURN c.nombre
+MATCH (p:Persona)-[:USA_TECNOLOGIA]->(t:Tecnologia)
+WITH p, collect(t) AS techs
+WHERE size(techs) > 1
+RETURN p.nombre, techs
