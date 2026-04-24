@@ -1,4 +1,2 @@
-MATCH (u:Universidad)<-[:ESTUDIA_EN]-(p:Persona)
-WITH u, count(p) AS total
-WHERE total > 1
-RETURN u.nombre, total
+MATCH (p:Persona)-[:VIVE_EN]->(c:Ciudad)
+RETURN c.nombre, count(p)
