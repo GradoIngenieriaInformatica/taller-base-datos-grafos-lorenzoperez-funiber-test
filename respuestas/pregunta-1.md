@@ -1,3 +1,2 @@
-MATCH (p:Persona)
-RETURN p.nombre
-LIMIT 2
+MATCH (p:Persona)-[:TRABAJA_EN]->(e:Empresa)
+RETURN p.nombre, e.nombre
